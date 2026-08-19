@@ -306,22 +306,26 @@
     <div class="section-text">
       <div class="section-number">Visualización 04</div>
       <span class="tool-badge tool-tableau">Tableau Public</span>
-      <h2>¿Cuánto escucho cada mes y qué proporción son skips?</h2>
+      <h2>¿A qué canción le doy vueltas hasta el cansancio?</h2>
       <p class="context">
-        Un dashboard interactivo que muestra la evolución mensual de minutos escuchados,
-        la proporción de canciones skippeadas (menos de 30 segundos), y permite
-        filtrar por artista para ver patrones individuales.
+        Un dashboard que detecta mis fases de "obsesión": temas que repetí 3 o más veces
+        en una misma semana. Mi pico del año fue "Tu Misterioso Alguien" de Miranda!,
+        con 14 escuchas reales en 7 días — ni siquiera es de los artistas que dominan
+        el resto de las visualizaciones.
       </p>
     </div>
     <div class="viz-container">
       <!--
         INSTRUCCIONES:
-        1. Abrí Tableau Public Desktop → Connect → Text file → viz_tableau_full.csv
-        2. Creá un dashboard con:
-           - Stacked bar: minutos por mes, color = is_skip (true/false)
-           - Treemap o packed bubbles: top artistas por minutos
-           - Filtro interactivo por artista
-        3. Publish to Tableau Public → Share → copiá el embed
+        1. Abrí Tableau Public Desktop → Connect → Text file → viz_tableau_obsession.csv
+        2. Hoja 1 "Ranking de obsesiones": track_key en Rows (Top 20 by peak_intensity),
+           peak_intensity (Max) en Columns y Color, marca tipo Bar
+        3. Hoja 2 "Curva de obsesión": date (exact, continuo) en Columns,
+           rolling_7day_plays en Rows (Line), plays_that_day en eje dual (Bar),
+           track_key en Filters
+        4. Dashboard: las dos hojas lado a lado, activar "Use as Filter" en el ranking
+           para que el click filtre la curva
+        5. Publish to Tableau Public → Share → pegá el embed acá
         4. Pegá el <script> de Tableau acá
       -->
       <div class="viz-placeholder">
