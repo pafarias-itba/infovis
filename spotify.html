@@ -34,9 +34,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 4rem 2rem;
-      max-width: 960px;
+      padding: 4rem clamp(2rem, 6vw, 6rem);
+      max-width: 1400px;
       margin: 0 auto;
+    }
+    .hero-text {
+      max-width: 760px;
     }
     .hero-eyebrow {
       font-family: 'Space Grotesk', sans-serif;
@@ -83,11 +86,14 @@
 
     /* ── Sections ─────────────────────────────── */
     .section {
-      max-width: 960px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 5rem 2rem;
+      padding: 5rem clamp(2rem, 6vw, 6rem);
     }
     .section + .section { border-top: 1px solid var(--border); }
+    .section-text {
+      max-width: 700px;
+    }
 
     .section-number {
       font-family: 'Space Grotesk', sans-serif;
@@ -116,14 +122,20 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.5rem;
-      min-height: 420px;
+      min-height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
+    }
+    .viz-container svg {
+      width: 100%;
+      height: auto;
+      max-height: 620px;
     }
     .viz-container iframe {
       width: 100%;
-      height: 500px;
+      height: 600px;
       border: none;
       border-radius: 8px;
     }
@@ -150,13 +162,14 @@
 
     /* ── Footer ──────────────────────────────── */
     .footer {
-      max-width: 960px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 3rem clamp(2rem, 6vw, 6rem);
       border-top: 1px solid var(--border);
       color: var(--text-muted);
       font-size: 0.8rem;
     }
+    .footer p { max-width: 700px; }
     .footer a { color: var(--accent-green); text-decoration: none; }
 
     /* ── Responsive ───────────────────────────── */
@@ -172,12 +185,14 @@
 
   <!-- ═══════ HERO ═══════ -->
   <header class="hero">
-    <div class="hero-eyebrow">Visualización de la Información · ITBA · 2026</div>
-    <h1>Un año de música:<br/>mi vida contada en <span>6.687 reproducciones</span></h1>
-    <p class="subtitle">
-      Agosto 2025 – Julio 2026. Doce meses de Spotify analizados con cuatro herramientas
-      de visualización. Cada gráfico responde una pregunta sobre cómo, cuándo y qué escucho.
-    </p>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Visualización de la Información · ITBA · 2026</div>
+      <h1>Un año de música:<br/>mi vida contada en <span>6.687 reproducciones</span></h1>
+      <p class="subtitle">
+        Agosto 2025 – Julio 2026. Doce meses de Spotify analizados con cuatro herramientas
+        de visualización. Cada gráfico responde una pregunta sobre cómo, cuándo y qué escucho.
+      </p>
+    </div>
     <div class="kpi-strip">
       <div class="kpi">
         <div class="kpi-value">828</div>
@@ -200,14 +215,16 @@
 
   <!-- ═══════ VIZ 1: RAWGraphs ═══════ -->
   <section class="section">
-    <div class="section-number">Visualización 01</div>
-    <span class="tool-badge tool-rawgraphs">RAWGraphs + Inkscape</span>
-    <h2>¿Cómo cambiaron mis artistas favoritos mes a mes?</h2>
-    <p class="context">
-      Un bump chart que muestra el ranking mensual de mis 10 artistas más escuchados.
-      Hernán Cattáneo dominó en agosto 2025 (cuando descubrí el melodic techno),
-      pero TINI y Bad Bunny fueron los más consistentes a lo largo del año.
-    </p>
+    <div class="section-text">
+      <div class="section-number">Visualización 01</div>
+      <span class="tool-badge tool-rawgraphs">RAWGraphs + Inkscape</span>
+      <h2>¿Cómo cambiaron mis artistas favoritos mes a mes?</h2>
+      <p class="context">
+        Un bump chart que muestra el ranking mensual de mis 10 artistas más escuchados.
+        Hernán Cattáneo dominó en agosto 2025 (cuando descubrí el melodic techno),
+        pero TINI y Bad Bunny fueron los más consistentes a lo largo del año.
+      </p>
+    </div>
     <div class="viz-container">
       <!-- 
         INSTRUCCIONES:
@@ -222,14 +239,16 @@
 
   <!-- ═══════ VIZ 2: Flourish ═══════ -->
   <section class="section">
-    <div class="section-number">Visualización 02</div>
-    <span class="tool-badge tool-flourish">Flourish</span>
-    <h2>¿Cómo acumularon minutos mis artistas top a lo largo del año?</h2>
-    <p class="context">
-      Una carrera de barras que muestra cómo se acumulan los minutos escuchados
-      de cada artista, mes a mes. Permite ver quién arranca fuerte y quién crece
-      de a poco hasta terminar en el podio.
-    </p>
+    <div class="section-text">
+      <div class="section-number">Visualización 02</div>
+      <span class="tool-badge tool-flourish">Flourish</span>
+      <h2>¿Cómo acumularon minutos mis artistas top a lo largo del año?</h2>
+      <p class="context">
+        Una carrera de barras que muestra cómo se acumulan los minutos escuchados
+        de cada artista, mes a mes. Permite ver quién arranca fuerte y quién crece
+        de a poco hasta terminar en el podio.
+      </p>
+    </div>
     <div class="viz-container">
       <!--
         INSTRUCCIONES:
@@ -249,14 +268,16 @@
 
   <!-- ═══════ VIZ 3: DataWrapper ═══════ -->
   <section class="section">
-    <div class="section-number">Visualización 03</div>
-    <span class="tool-badge tool-datawrapper">DataWrapper</span>
-    <h2>¿En qué momento del día y de la semana escucho más música?</h2>
-    <p class="context">
-      Un heatmap que cruza día de la semana con hora del día. Las tardes de jueves
-      son el pico absoluto de escucha, y los viernes a la noche es cuando más
-      suena el reggaetón y el trap.
-    </p>
+    <div class="section-text">
+      <div class="section-number">Visualización 03</div>
+      <span class="tool-badge tool-datawrapper">DataWrapper</span>
+      <h2>¿En qué momento del día y de la semana escucho más música?</h2>
+      <p class="context">
+        Un heatmap que cruza día de la semana con hora del día. Las tardes de jueves
+        son el pico absoluto de escucha, y los viernes a la noche es cuando más
+        suena el reggaetón y el trap.
+      </p>
+    </div>
     <div class="viz-container">
       <!--
         INSTRUCCIONES:
@@ -277,14 +298,16 @@
 
   <!-- ═══════ VIZ 4: Tableau / PowerBI ═══════ -->
   <section class="section">
-    <div class="section-number">Visualización 04</div>
-    <span class="tool-badge tool-tableau">Tableau Public</span>
-    <h2>¿Cuánto escucho cada mes y qué proporción son skips?</h2>
-    <p class="context">
-      Un dashboard interactivo que muestra la evolución mensual de minutos escuchados,
-      la proporción de canciones skippeadas (menos de 30 segundos), y permite
-      filtrar por artista para ver patrones individuales.
-    </p>
+    <div class="section-text">
+      <div class="section-number">Visualización 04</div>
+      <span class="tool-badge tool-tableau">Tableau Public</span>
+      <h2>¿Cuánto escucho cada mes y qué proporción son skips?</h2>
+      <p class="context">
+        Un dashboard interactivo que muestra la evolución mensual de minutos escuchados,
+        la proporción de canciones skippeadas (menos de 30 segundos), y permite
+        filtrar por artista para ver patrones individuales.
+      </p>
+    </div>
     <div class="viz-container">
       <!--
         INSTRUCCIONES:
